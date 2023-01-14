@@ -1,3 +1,3 @@
 # booker
 
-Making a transactional system
+Making a transactional distributed system
