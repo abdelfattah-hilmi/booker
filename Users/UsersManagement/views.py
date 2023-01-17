@@ -7,3 +7,4 @@ class UserRegister(ListCreateAPIView):
     serializer_class = UserSerializer
 
 
+# TODO Create an endpoint for other services to check the validity and usability of the jwt
