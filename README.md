@@ -1,3 +1,3 @@
 # booker
 
-Making a transactional distributed system
+The only booking assistant you'll ever need.
