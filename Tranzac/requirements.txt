@@ -1,3 +1,4 @@
 Flask
 pymongo==4.3.3
+requests
 flask-mongoengine

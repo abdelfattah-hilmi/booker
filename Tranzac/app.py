@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_mongoengine import MongoEngine
 from models.venue import Venue
-from bson import ObjectId
+import requests
+# from bson import ObjectId
 
 
 app = Flask(__name__)
@@ -17,8 +18,19 @@ app.config['MONGODB_SETTINGS'] = {
 db = MongoEngine(app)
 
 
-def create_venue(title,rating):
+def create_venue(title:str,rating:int)->None:
     Venue(title=title,rating=rating).save()
+
+def verify_access_jwt(url:str,token:str)->bool:
+    ''' this fuction returns True if the given jwt is verified from the Users service, and False if jwt is invalid(does not correspond to an autheticated user) '''
+
+    response = requests.post(url,{
+        "token":token
+    })
+
+    return True if response.status.code == 200 else False
+
+
 
 
 @app.get('/')
