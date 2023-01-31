@@ -9,7 +9,8 @@ app = Flask(__name__)
 
 app.config['MONGODB_SETTINGS'] = {
     "db":"Tranzac_db",
-    "host":"localhost",
+    "host":"mongo",
+    # "host":"localhost", if y decide to run the app localy 
     "username":"root",
     "password":"root",
     "port": 27017
